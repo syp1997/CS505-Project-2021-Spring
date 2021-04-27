@@ -23,9 +23,9 @@ Artistic style transfer may be defined as creating a stylized image x from a con
 
 The complete optimization objective for style transfer may be expressed as:
 
-<img src="/Users/syp1997/Desktop/loss1.png" alt="precision_recall" width = "40%" height="40%"/>
+<img src="https://github.com/syp1997/CS585-Project-2021-Spring/blob/main/imgs/loss1.png" alt="precision_recall" width = "40%" height="40%" align=center/>
 
-<img src="/Users/syp1997/Desktop/loss2.png" alt="precision_recall" width = "50%" height="50%"/>
+<img src="https://github.com/syp1997/CS585-Project-2021-Spring/blob/main/imgs/loss2.png" alt="precision_recall" width = "50%" height="50%" align=center />
 
 #### 2.2 StarGAN v2
 
@@ -35,23 +35,23 @@ There are four modules: **Generator**, **Mapping network**, **Style encoder**, *
 
 **Adversarial objective.**
 
-<img src="https://github.com/syp1997/CS585-Project-2021-Spring/blob/main/imgs/adv.png" alt="precision_recall" width = "50%" height="50%"/>
+<img src="https://github.com/syp1997/CS585-Project-2021-Spring/blob/main/imgs/adv.png" alt="precision_recall" width = "50%" height="50%" align=center/>
 
 **Style reconstruction.**
 
-<img src="https://github.com/syp1997/CS585-Project-2021-Spring/blob/main/imgs/sty.png" alt="precision_recall" width = "50%" height="50%"/>
+<img src="https://github.com/syp1997/CS585-Project-2021-Spring/blob/main/imgs/sty.png" alt="precision_recall" width = "50%" height="50%" align=center/>
 
 **Style diversification.**
 
-<img src="https://github.com/syp1997/CS585-Project-2021-Spring/blob/main/imgs/ds.png" alt="precision_recall" width = "50%" height="50%"/>
+<img src="https://github.com/syp1997/CS585-Project-2021-Spring/blob/main/imgs/ds.png" alt="precision_recall" width = "50%" height="50%" align=center/>
 
 **Preserving source characteristics.**
 
-<img src="https://github.com/syp1997/CS585-Project-2021-Spring/blob/main/imgs/cyc.png" alt="precision_recall" width = "50%" height="50%"/>
+<img src="https://github.com/syp1997/CS585-Project-2021-Spring/blob/main/imgs/cyc.png" alt="precision_recall" width = "50%" height="50%" align=center/>
 
 **Full objective.**
 
-<img src="https://github.com/syp1997/CS585-Project-2021-Spring/blob/main/imgs/full.png" alt="precision_recall" width = "50%" height="50%"/>
+<img src="https://github.com/syp1997/CS585-Project-2021-Spring/blob/main/imgs/full.png" alt="precision_recall" width = "50%" height="50%" align=center/>
 
 ## 3.Data Collection
 
@@ -63,13 +63,13 @@ There are four modules: **Generator**, **Mapping network**, **Style encoder**, *
 
 We choose several distinct styles and collect celebrity images, applying each style to these celebrity photos.
 
-<img src="https://github.com/syp1997/CS585-Project-2021-Spring/blob/main/imgs/res1.png" alt="precision_recall" width = "100%" height="100%"/>
+<img src="https://github.com/syp1997/CS585-Project-2021-Spring/blob/main/imgs/res1.png" alt="precision_recall" width = "100%" height="100%" align=center/>
 
 #### 4.2 StarGANv2
 
 We apply StarGAN to these celebrity images to transfer semantic attributes, synthesizing images that reflect diverse styles of references including hairstyle, makeup and beard.
 
-<img src="https://github.com/syp1997/CS585-Project-2021-Spring/blob/main/imgs/stargan.png" alt="precision_recall" width = "100%" height="100%"/>
+<img src="https://github.com/syp1997/CS585-Project-2021-Spring/blob/main/imgs/stargan.png" alt="precision_recall" width = "100%" height="100%" align=center/>
 
 ## 5.Analysis
 
@@ -77,11 +77,11 @@ We apply StarGAN to these celebrity images to transfer semantic attributes, synt
 
 For Style Transfer for Arbitrary Styles in 4.1, we found when the color change of style images is obvious, the the quality of the generated image is poor. Shown in the following figure, the columns of 3rd, 5th, 7th, the quatity is relatively low. For other cases, the stylized images looks well.
 
-<img src="https://github.com/syp1997/CS585-Project-2021-Spring/blob/main/imgs/low_qua.png" alt="precision_recall" width = "100%" height="100%"/>
+<img src="https://github.com/syp1997/CS585-Project-2021-Spring/blob/main/imgs/low_qua.png" alt="precision_recall" width = "100%" height="100%" align=center/>
 
 For StarGANv2 in 4.2, we found when there are some obstructions on the face, the quality is poor. Or when the height and width of the picture are very different, the quality of the synthesized picture is very low. Shown in the following figure, the imges of 1st, 6th, 7th columns are not satisfying. When the face is properly proportioned, the algorithm works weill.
 
-<img src="https://github.com/syp1997/CS585-Project-2021-Spring/blob/main/imgs/low_qua_2.png" alt="precision_recall" width = "100%" height="100%"/>
+<img src="https://github.com/syp1997/CS585-Project-2021-Spring/blob/main/imgs/low_qua_2.png" alt="precision_recall" width = "100%" height="100%" align=center/>
 
 #### 5.2 Quantitative Metrics
 
