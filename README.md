@@ -19,11 +19,7 @@ Artistic style transfer may be defined as creating a stylized image x from a con
 
 The complete optimization objective for style transfer may be expressed as:
 
-```text
-<div  align="center">    
 <img src="https://github.com/syp1997/CS585-Project-2021-Spring/blob/main/imgs/loss1.png" alt="precision_recall" width = "40%" height="40%" align=center/>
-</div>
-```
 
 <img src="https://github.com/syp1997/CS585-Project-2021-Spring/blob/main/imgs/loss2.png" alt="precision_recall" width = "50%" height="50%" align=center />
 
