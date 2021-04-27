@@ -12,14 +12,18 @@ This is implemented by optimizing the output image to match the content statisti
 
 #### 2.1 Style Transfer for Arbitrary Styles
 
-Artistic style transfer may be defined as creating a stylized image x from a content image c and a style image s. Typically, the content image c is a photograph and the style image s is a painting. A neural algorithm of artistic style [9] posits the content and style of an image may be defined as follows:
+Artistic style transfer may be defined as creating a stylized image x from a content image c and a style image s. Typically, the content image c is a photograph and the style image s is a painting. A neural algorithm of artistic style posits the content and style of an image may be defined as follows:
 
 - Two images are similar in content if their high-level features as extracted by an image recognition system are close in Euclidean distance.
 -  Two images are similar in style if their low-level features as extracted by an image recognition system share the same spatial statistics.
 
 The complete optimization objective for style transfer may be expressed as:
 
-<img src="https://github.com/syp1997/CS585-Project-2021-Spring/blob/main/imgs/loss1.png" alt="precision_recall" width = "40%" height="40%" align=center/>
+```html
+<div align="center">    
+<img src="https://github.com/syp1997/CS585-Project-2021-Spring/blob/main/imgs/loss1.png" alt="precision_recall" width = "40%" height="40%"/>
+</div>
+```
 
 <img src="https://github.com/syp1997/CS585-Project-2021-Spring/blob/main/imgs/loss2.png" alt="precision_recall" width = "50%" height="50%" align=center />
 
