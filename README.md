@@ -1,10 +1,6 @@
 # Neural Style Transfer
 
-BU CS 585 Final Project - Spring 2021
-Bowen Sun
-Hao He
-Yinpei Su
-25th April 2021
+BU CS 585 Final Project - Spring 2021<br>Bowen Sun, Hao He, Yinpei Su, Zimou Sun<br>25th April 2021
 
 ## 1.Introduction
 
@@ -85,4 +81,4 @@ For StarGANv2 in 4.2, we found when there are some obstructions on the face, the
 
 #### 5.2 Quantitative Metrics
 
-We use content loss and style loss to evaluate the synthesized images.
+We use content loss and style loss to evaluate the synthesized images. For 
