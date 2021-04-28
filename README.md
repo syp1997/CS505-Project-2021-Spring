@@ -122,6 +122,4 @@ We collected the losses on different faces, and find facess with top-5 loss, sho
 
 ## 6. Reference
 
-[1] Leon A. Gatys, Alexander S. Ecker, Matthias Bethge. A Neural Algorithm of Artistic Style. <br>[2] Golnaz Ghiasi, Honglak Lee, Manjunath Kudlur, Vincent Dumoulin, Jonathon Shlens. Exploring the structure of a real-time, arbitrary neural artistic stylization network.<br>[3] Leon A. Gatys, Alexander S. Ecker, Matthias Bethge. Texture Synthesis Using Convolutional Neural Networks.<br>
-
-[4] Yunjey Choi, Youngjung Uh, Jaejun Yoo, Jung-Woo Ha. StarGAN v2: Diverse Image Synthesis for Multiple Domains.<br>
+[1] Leon A. Gatys, Alexander S. Ecker, Matthias Bethge. A Neural Algorithm of Artistic Style. <br>[2] Golnaz Ghiasi, Honglak Lee, Manjunath Kudlur, Vincent Dumoulin, Jonathon Shlens. Exploring the structure of a real-time, arbitrary neural artistic stylization network.<br>[3] Leon A. Gatys, Alexander S. Ecker, Matthias Bethge. Texture Synthesis Using Convolutional Neural Networks. <br>[4] Yunjey Choi, Youngjung Uh, Jaejun Yoo, Jung-Woo Ha. StarGAN v2: Diverse Image Synthesis for Multiple Domains.<br>
