@@ -119,6 +119,7 @@ We collected the losses on different faces, and find facess with top-5 loss, sho
 <div align="center"> 
 <img src="https://github.com/syp1997/CS585-Project-2021-Spring/blob/main/imgs/high_losss.png" alt="precision_recall" width = "100%" height="100%" align=center/>
 </div>
+
 ## 6. Reference
 
 [1] Leon A. Gatys, Alexander S. Ecker, Matthias Bethge. A Neural Algorithm of Artistic Style. <br>[2] Golnaz Ghiasi, Honglak Lee, Manjunath Kudlur, Vincent Dumoulin, Jonathon Shlens. Exploring the structure of a real-time, arbitrary neural artistic stylization network.<br>[3] Leon A. Gatys, Alexander S. Ecker, Matthias Bethge. Texture Synthesis Using Convolutional Neural Networks.<br>
