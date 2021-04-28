@@ -12,16 +12,20 @@ This is implemented by optimizing the output image to match the content statisti
 
 #### 2.1 Style Transfer for Arbitrary Styles
 
-Artistic style transfer may be defined as creating a stylized image x from a content image c and a style image s. Typically, the content image c is a photograph and the style image s is a painting. A neural algorithm of artistic style [9] posits the content and style of an image may be defined as follows:
+Artistic style transfer may be defined as creating a stylized image x from a content image c and a style image s. Typically, the content image c is a photograph and the style image s is a painting. A neural algorithm of artistic style posits the content and style of an image may be defined as follows:
 
 - Two images are similar in content if their high-level features as extracted by an image recognition system are close in Euclidean distance.
 -  Two images are similar in style if their low-level features as extracted by an image recognition system share the same spatial statistics.
 
 The complete optimization objective for style transfer may be expressed as:
 
-<img src="https://github.com/syp1997/CS585-Project-2021-Spring/blob/main/imgs/loss1.png" alt="precision_recall" width = "40%" height="40%" align=center/>
+<div align="center">    
+<img src="https://github.com/syp1997/CS585-Project-2021-Spring/blob/main/imgs/loss1.png" alt="precision_recall" width = "40%" height="40%"/>
+</div>
 
+<div align="center">    
 <img src="https://github.com/syp1997/CS585-Project-2021-Spring/blob/main/imgs/loss2.png" alt="precision_recall" width = "50%" height="50%" align=center />
+</div>
 
 #### 2.2 StarGAN v2
 
@@ -31,23 +35,32 @@ There are four modules: **Generator**, **Mapping network**, **Style encoder**, *
 
 **Adversarial objective.**
 
+<div align="center">    
 <img src="https://github.com/syp1997/CS585-Project-2021-Spring/blob/main/imgs/adv.png" alt="precision_recall" width = "50%" height="50%" align=center/>
-
+</div>
 **Style reconstruction.**
 
+<div align="center">    
 <img src="https://github.com/syp1997/CS585-Project-2021-Spring/blob/main/imgs/sty.png" alt="precision_recall" width = "50%" height="50%" align=center/>
+</div>
 
 **Style diversification.**
 
+<div align="center">    
 <img src="https://github.com/syp1997/CS585-Project-2021-Spring/blob/main/imgs/ds.png" alt="precision_recall" width = "50%" height="50%" align=center/>
+</div>
 
 **Preserving source characteristics.**
 
+<div align="center"> 
 <img src="https://github.com/syp1997/CS585-Project-2021-Spring/blob/main/imgs/cyc.png" alt="precision_recall" width = "50%" height="50%" align=center/>
+</div>
 
 **Full objective.**
 
+<div align="center"> 
 <img src="https://github.com/syp1997/CS585-Project-2021-Spring/blob/main/imgs/full.png" alt="precision_recall" width = "50%" height="50%" align=center/>
+</div>
 
 ## 3.Data Collection
 
@@ -59,26 +72,49 @@ There are four modules: **Generator**, **Mapping network**, **Style encoder**, *
 
 We choose several distinct styles and collect celebrity images, applying each style to these celebrity photos.
 
+<div align="center"> 
 <img src="https://github.com/syp1997/CS585-Project-2021-Spring/blob/main/imgs/res1.png" alt="precision_recall" width = "100%" height="100%" align=center/>
+</div>
 
 #### 4.2 StarGANv2
 
 We apply StarGAN to these celebrity images to transfer semantic attributes, synthesizing images that reflect diverse styles of references including hairstyle, makeup and beard.
 
+<div align="center"> 
 <img src="https://github.com/syp1997/CS585-Project-2021-Spring/blob/main/imgs/stargan.png" alt="precision_recall" width = "100%" height="100%" align=center/>
+</div>
 
 ## 5.Analysis
 
 #### 5.1 Qualitative Metrics
 
-For Style Transfer for Arbitrary Styles in 4.1, we found when the color change of style images is obvious, the the quality of the generated image is poor. Shown in the following figure, the columns of 3rd, 5th, 7th, the quatity is relatively low. For other cases, the stylized images looks well.
+For Style Transfer for Arbitrary Styles in 4.1, we found when the color change of style images is obvious, the the quality of the generated image is poor. Shown in the following figure, the columns of 3rd, 5th, 7th, the quality is relatively low. For other cases, the stylized images looks well.
 
+<div align="center"> 
 <img src="https://github.com/syp1997/CS585-Project-2021-Spring/blob/main/imgs/low_qua.png" alt="precision_recall" width = "100%" height="100%" align=center/>
+</div>
 
 For StarGANv2 in 4.2, we found when there are some obstructions on the face, the quality is poor. Or when the height and width of the picture are very different, the quality of the synthesized picture is very low. Shown in the following figure, the imges of 1st, 6th, 7th columns are not satisfying. When the face is properly proportioned, the algorithm works weill.
 
+<div align="center"> 
 <img src="https://github.com/syp1997/CS585-Project-2021-Spring/blob/main/imgs/low_qua_2.png" alt="precision_recall" width = "100%" height="100%" align=center/>
-
+</div>
 #### 5.2 Quantitative Metrics
 
-We use content loss and style loss to evaluate the synthesized images. For 
+##### 5.2.1 Quantitative evalution for different styles
+
+We randomly sampled 1000 images from 202,599 face images and measure the distance of feature representations between Stylized image and content image, and the between Stylized image and style image. Shown in the following figure, the loss of first two columns is higher than others, we think the drastic color changes cause the poor result.
+
+<div align="center"> 
+<img src="https://github.com/syp1997/CS585-Project-2021-Spring/blob/main/imgs/sl1.png" alt="precision_recall" width = "100%" height="100%" align=center/>
+<img src="https://github.com/syp1997/CS585-Project-2021-Spring/blob/main/imgs/sl2.png" alt="precision_recall" width = "100%" height="100%" align=center/>
+</div>
+
+##### 5.2.2 Quantitative evalution for different faces
+
+We collected the losses on different faces, and find facess with top-5 loss, shown in the following figure. We think the colorful background affect the final results.
+
+<div align="center"> 
+<img src="https://github.com/syp1997/CS585-Project-2021-Spring/blob/main/imgs/faces_loss.png" alt="precision_recall" width = "100%" height="100%" align=center/>
+<img src="https://github.com/syp1997/CS585-Project-2021-Spring/blob/main/imgs/high_losss.png" alt="precision_recall" width = "100%" height="100%" align=center/>
+</div>
