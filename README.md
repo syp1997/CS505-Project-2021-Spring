@@ -38,6 +38,7 @@ There are four modules: **Generator**, **Mapping network**, **Style encoder**, *
 <div align="center">    
 <img src="https://github.com/syp1997/CS585-Project-2021-Spring/blob/main/imgs/adv.png" alt="precision_recall" width = "50%" height="50%" align=center/>
 </div>
+
 **Style reconstruction.**
 
 <div align="center">    
@@ -99,6 +100,7 @@ For StarGANv2 in 4.2, we found when there are some obstructions on the face, the
 <div align="center"> 
 <img src="https://github.com/syp1997/CS585-Project-2021-Spring/blob/main/imgs/low_qua_2.png" alt="precision_recall" width = "100%" height="100%" align=center/>
 </div>
+
 #### 5.2 Quantitative Metrics
 
 ##### 5.2.1 Quantitative evalution for different styles
@@ -115,6 +117,5 @@ We randomly sampled 1000 images from 202,599 face images and measure the distanc
 We collected the losses on different faces, and find facess with top-5 loss, shown in the following figure. We think the colorful background affect the final results.
 
 <div align="center"> 
-<img src="https://github.com/syp1997/CS585-Project-2021-Spring/blob/main/imgs/faces_loss.png" alt="precision_recall" width = "100%" height="100%" align=center/>
 <img src="https://github.com/syp1997/CS585-Project-2021-Spring/blob/main/imgs/high_losss.png" alt="precision_recall" width = "100%" height="100%" align=center/>
 </div>
