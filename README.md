@@ -63,9 +63,16 @@ There are four modules: **Generator**, **Mapping network**, **Style encoder**, *
 <img src="https://github.com/syp1997/CS585-Project-2021-Spring/blob/main/imgs/full.png" alt="precision_recall" width = "50%" height="50%" align=center/>
 </div>
 
+#### 2.3 Re-train StarGAN v2 using CelebA and PBN
+To test the model capability on our designed problem set, we re-train the StarGAN v2 using both celebrity
+photos and stylish paintings. The domains are defined as Male, Female(from CelebA) and 40 genres(from PBN). We trained it for 100000 epoches for about 3 days.
+
 ## 3.Data Collection
 
 **CelebFaces Attributes Dataset (CelebA)** is a large-scale face attributes dataset with more than 200K celebrity images, each with 40 attribute annotations. We use these celebrity photos as content images. For Style Transfer for Arbitrary Styles, we use style images from tf-hub, and find some other style imagess from internet; for StarGanv2, we use the sample images of it as style images. After that, we also use our own images as content images to play with it.
+
+**Painter by Number dataset(PBN)** is a dataset about paintings with various painters and styles. It has 103,251 imges with several attributes. In our problen set, we define 'genre' attribute to be the 'style' we want. This dataset contains 40 genres(styles), and we move paintings to differene folders with respect to their genres.
+
 
 ## 4.Results
 
@@ -100,6 +107,15 @@ For StarGANv2 in 4.2, we found when there are some obstructions on the face, the
 <div align="center"> 
 <img src="https://github.com/syp1997/CS585-Project-2021-Spring/blob/main/imgs/low_qua_2.png" alt="precision_recall" width = "100%" height="100%" align=center/>
 </div>
+
+For the re-trained model, we generate transformed images with the same style images used in the first part. We compare the resultL
+
+<div align="center"> 
+<img src="./imgs/compare.png" alt="precision_recall" width = "100%" height="100%" align=center/>
+</div>
+
+We can find that the StarGAN v2 can genreate clear face information and give us reasonable style transfer results. But it also have some drawbacks. It could mostly capture color information and will lose some obvious texture information. However, it can capture very minor textures.
+The model also tend to transfer male to female images, this may because there are more female images than male images in training set, thus the model tends to obtain more feamale features.
 
 #### 5.2 Quantitative Metrics
 
