@@ -64,7 +64,24 @@ There are four modules: **Generator**, **Mapping network**, **Style encoder**, *
 </div>
 
 #### 2.3 Re-train StarGAN v2 using CelebA and PBN
-To test the model capability on our designed problem set, we re-train the StarGAN v2 using both celebrity photos and stylish paintings. The domains are defined as Male, Female(from CelebA) and 40 genres(from PBN). We trained it for 100000 epoches for about 3 days.
+To test the model capability on our designed problem set, we re-train the StarGAN v2 using both celebrity
+photos and stylish paintings. The domains are defined as Male, Female(from CelebA) and 40 genres(from PBN). We trained it for 100000 epoches for about 3 days.
+
+**Training**
+To start training on CelebA and PBN, firstly, run Prepare_dataset.ipynb to prepare dataset into two folders: ref and src(or any name you want). And then run the code below:
+python main.py --mode train --num_domains 2 --w_hpf 1 \
+               --lambda_reg 1 --lambda_sty 1 --lambda_ds 1 --lambda_cyc 1 \
+               --train_img_dir [where you put the training set, e.g. 'data/celeba_hq/train'] \
+               --val_img_dir [where you put the validation set, e.g. 'data/celeba_hq/val']
+
+**Testing**
+To test model or to generate costumed images, create your own testing source image folder with two folders: ref and src. Put source images (e.g. celebrity face photos) and refrence images (e.g. painting images from PBN) in each folders. 
+Download the checkpoint file https://www.dropbox.com/s/96fmei6c93o8b8t/100000_nets_ema.ckpt?dl=0, and save it to expr/checkpoints/celeba_hq.
+And run code below, the genreated images and videos will appear in the output folder you specify. The number of folders in both src and ref should be the same as the num_domains.
+python main.py --mode sample --num_domains [the number of folders in src/ref] --resume_iter 100000 --w_hpf 1 \
+               --result_dir [where you want to put your results, e.g. 'expr/results/celeba_hq'] \
+               --src_dir [where you put your source images, e.g. 'assets/representative/celeba_hq/src'] \
+               --ref_dir [where you put your reference images, e.g. 'assets/representative/celeba_hq/ref']
 
 ## 3.Data Collection
 
@@ -101,17 +118,20 @@ For Style Transfer for Arbitrary Styles in 4.1, we found when the color change o
 <img src="https://github.com/syp1997/CS585-Project-2021-Spring/blob/main/imgs/low_qua.png" alt="precision_recall" width = "100%" height="100%" align=center/>
 </div>
 
-For StarGANv2 in 4.2, we found when there are some obstructions on the face, the quality is poor. Or when the height and width of the picture are very different, the quality of the synthesized picture is very low. Shown in the following figure, the imges of 1st, 6th, 7th columns are not satisfying. When the face is properly proportioned, the algorithm works well.
+For StarGANv2 in 4.2, we found when there are some obstructions on the face, the quality is poor. Or when the height and width of the picture are very different, the quality of the synthesized picture is very low. Shown in the following figure, the imges of 1st, 6th, 7th columns are not satisfying. When the face is properly proportioned, the algorithm works weill.
 
 <div align="center"> 
 <img src="https://github.com/syp1997/CS585-Project-2021-Spring/blob/main/imgs/low_qua_2.png" alt="precision_recall" width = "100%" height="100%" align=center/>
 </div>
 
-For the re-trained model, we generate transformed images with the same style images used in the first part. We compare the results and find that the StarGAN v2 can genreate clear face information and give us reasonable style transfer results. But it also have some drawbacks. It could mostly capture color information and will lose some obvious texture information. However, it can capture very minor textures. <br>The model also tend to transfer male to female images, this may because there are more female images than male images in training set, thus the model tends to obtain more feamale features.
+For the re-trained model, we generate transformed images with the same style images used in the first part. We compare the resultL
 
 <div align="center"> 
 <img src="./imgs/compare.png" alt="precision_recall" width = "100%" height="100%" align=center/>
 </div>
+
+We can find that the StarGAN v2 can genreate clear face information and give us reasonable style transfer results. But it also have some drawbacks. It could mostly capture color information and will lose some obvious texture information. However, it can capture very minor textures.
+The model also tend to transfer male to female images, this may because there are more female images than male images in training set, thus the model tends to obtain more feamale features.
 
 #### 5.2 Quantitative Metrics
 
